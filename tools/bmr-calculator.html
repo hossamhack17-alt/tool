@@ -1,9 +1,44 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BMR Calculator — Mifflin-St Jeor Basal Metabolic Rate</title><meta name="description" content="Calculate BMR using Mifflin-St Jeor formula. Informational only, not medical advice. Private offline."><link rel="canonical" href="https://israelpost.cc/tools/bmr-calculator.html">
 <meta property="og:title" content="BMR Calculator — Mifflin-St Jeor Basal Metabolic Rate"><meta property="og:description" content="Calculate BMR using Mifflin-St Jeor formula. Informational only, not medical advice. Private offline."><meta property="og:url" content="https://israelpost.cc/tools/bmr-calculator.html">
-<script defer src="https://cdn.tailwindcss.com"></script></head><body class="bg-gray-50 text-gray-800"><header class="bg-white border-b sticky top-0 z-30"><div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"><a href="/" class="font-bold text-xl text-indigo-600">IsraelPost</a><nav class="flex gap-4 text-sm"><a href="/" class="hover:text-indigo-600">Home</a><a href="/tools/" class="hover:text-indigo-600">Tools</a><a href="/about.html" class="hover:text-indigo-600">About</a><a href="/author/" class="hover:text-indigo-600">Author</a><a href="/contact.html" class="hover:text-indigo-600">Contact</a><a href="/privacy.html" class="hover:text-indigo-600">Privacy</a><a href="/terms.html" class="hover:text-indigo-600">Terms</a><a href="/disclaimer.html" class="hover:text-indigo-600">Disclaimer</a></nav></div></header>
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#4f46e5">
+<script>tailwind={config:{darkMode:'class'}};</script>
+<script>(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches))document.documentElement.classList.add('dark');}catch(e){}})();</script>
+<script defer src="https://cdn.tailwindcss.com"></script></head><body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100"><header class="bg-white dark:bg-gray-900 border-b sticky top-0 z-30">
+<div class="max-w-7xl mx-auto px-6 py-2 flex justify-between items-center">
+<a href="/" class="font-bold text-xl text-indigo-600 dark:text-indigo-400 py-3 px-3 min-h-[48px] inline-flex items-center rounded-lg">IsraelPost</a>
+<div class="flex items-center gap-1">
+<nav class="hidden md:flex gap-1 text-sm">
+<a href="/" class="py-3 px-3 min-h-[48px] inline-flex items-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">Home</a>
+<a href="/tools/" class="py-3 px-3 min-h-[48px] inline-flex items-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">Tools</a>
+<a href="/about.html" class="py-3 px-3 min-h-[48px] inline-flex items-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">About</a>
+<a href="/author/" class="py-3 px-3 min-h-[48px] inline-flex items-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">Author</a>
+<a href="/blog/" class="py-3 px-3 min-h-[48px] inline-flex items-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">Blog</a>
+<a href="/contact.html" class="py-3 px-3 min-h-[48px] inline-flex items-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">Contact</a>
+</nav>
+<button id="darkToggle" aria-label="Toggle dark mode" class="p-3 min-h-[48px] min-w-[48px] rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"><span id="iconSun">🌙</span><span id="iconMoon" class="hidden">☀️</span></button>
+<button id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" class="md:hidden p-3 min-h-[48px] min-w-[48px] rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"><span class="text-xl">☰</span></button>
+</div>
+</div>
+<div id="mobileMenu" class="md:hidden hidden border-t bg-white dark:bg-gray-900">
+<nav class="px-6 py-3 flex flex-col">
+<a href="/" class="py-3 px-3 min-h-[48px] flex items-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">Home</a>
+<a href="/tools/" class="py-3 px-3 min-h-[48px] flex items-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">Tools</a>
+<a href="/about.html" class="py-3 px-3 min-h-[48px] flex items-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">About</a>
+<a href="/author/" class="py-3 px-3 min-h-[48px] flex items-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">Author</a>
+<a href="/blog/" class="py-3 px-3 min-h-[48px] flex items-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">Blog</a>
+<a href="/contact.html" class="py-3 px-3 min-h-[48px] flex items-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">Contact</a>
+<a href="/privacy.html" class="py-3 px-3 min-h-[48px] flex items-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">Privacy</a>
+<a href="/terms.html" class="py-3 px-3 min-h-[48px] flex items-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">Terms</a>
+<a href="/disclaimer.html" class="py-3 px-3 min-h-[48px] flex items-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">Disclaimer</a>
+</nav>
+</div>
+</header>
+
 <main class="max-w-7xl mx-auto px-6 py-10 grid lg:grid-cols-3 gap-10"><div class="lg:col-span-2"><div class="bg-white border rounded-xl p-6"><h1 class="text-3xl font-bold">BMR Calculator</h1><p class="text-sm text-gray-600 mt-2">Calculate Basal Metabolic Rate. Educational only.</p><div class="mt-6"><div class="space-y-3"><div class="grid grid-cols-2 gap-2"><select id="gender" class="border p-2 rounded text-sm"><option value="male">Male</option><option value="female">Female</option></select><input id="age" type="number" placeholder="Age" value="25" class="border p-2 rounded text-sm"></div><div class="grid grid-cols-2 gap-2"><input id="bmrW" type="number" placeholder="Weight kg" value="70" class="border p-2 rounded text-sm"><input id="bmrH" type="number" placeholder="Height cm" value="175" class="border p-2 rounded text-sm"></div><button onclick="calcBMR()" class="bg-indigo-600 text-white px-6 py-2 rounded">Calculate BMR</button><div id="bmrRes" class="mt-4 p-4 bg-gray-50 border rounded hidden"><div class="text-2xl font-bold" id="bmrVal"></div><div class="text-xs">calories/day at rest</div><p class="text-xs text-gray-500 mt-2">Informational only, not medical advice.</p></div></div></div>
 <div class="mt-8"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7123962689094781" data-ad-slot="5496967122" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div></div>
+<p class="text-sm mt-4 bg-indigo-50 border border-indigo-200 rounded-lg p-3">📖 Learn: <a href="/blog/how-to-calculate-bmr-correctly.html" class="text-indigo-600 underline">How BMR is calculated correctly (with example)</a> · <a href="/blog/bmr-vs-tdee-what-is-the-difference.html" class="text-indigo-600 underline">BMR vs TDEE</a></p>
 <div class="bg-white border rounded-xl p-8 mt-8 text-sm leading-7">
 <h2 class="text-xl font-bold">What is BMR Calculator?</h2>
 <p class="mt-3">BMR (Basal Metabolic Rate) is calories your body burns at rest to keep breathing, heart beating, brain working. If you know BMR, you can estimate total daily needs by multiplying with activity factor. This calculator uses Mifflin-St Jeor equation, which is considered most accurate for non-athletes by many dietitians.</p>
@@ -18,7 +53,7 @@
 <p class="mt-8 text-xs text-gray-500">Last updated: 2026-08-19 — Related: <a href="/tools/bmi-calculator.html" class="underline">BMI</a>, <a href="/tools/age-calculator.html" class="underline">Age</a>.</p>
 </div></div>
 <div class="space-y-6"><div class="bg-white border rounded-xl p-6 text-sm"><h3 class="font-bold">Related Tools</h3><ul class="mt-3 space-y-2"><li><a href="/tools/json-formatter.html" class="text-indigo-600 underline">JSON Formatter</a></li><li><a href="/tools/word-counter.html" class="text-indigo-600 underline">Word Counter</a></li><li><a href="/tools/" class="text-indigo-600 underline">All Tools</a></li></ul></div></div>
-</main><footer class="bg-gray-900 text-gray-300 mt-20"><div class="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-4 gap-8 text-sm"><div><h4 class="font-bold text-white">IsraelPost Tools</h4><p class="mt-2 text-gray-400">Free browser-based tools. All tools run locally — no file upload. Contact: admin@israelpost.cc</p></div><div><h4 class="font-bold text-white">Tools</h4><ul class="mt-3 space-y-1"><li><a href="/tools/json-formatter.html" class="hover:text-white">JSON Formatter</a></li><li><a href="/tools/bmi-calculator.html" class="hover:text-white">BMI Calculator</a></li><li><a href="/tools/" class="hover:text-white">All 25 Tools</a></li></ul></div><div><h4 class="font-bold text-white">Legal</h4><ul class="mt-3 space-y-1"><li><a href="/privacy.html" class="hover:text-white">Privacy</a></li><li><a href="/terms.html" class="hover:text-white">Terms</a></li><li><a href="/disclaimer.html" class="hover:text-white">Disclaimer</a></li></ul></div><div><h4 class="font-bold text-white">About</h4><p class="mt-3 text-gray-400">Managed by Ahmed Bream. Last updated: 2026-08-19.</p></div></div><div class="border-t border-gray-800 py-4 text-center text-xs text-gray-500">© 2026 IsraelPost — israelpost.cc</div></footer><script>function calcBMR(){const g=document.getElementById('gender').value, age=parseFloat(document.getElementById('age').value), w=parseFloat(document.getElementById('bmrW').value), h=parseFloat(document.getElementById('bmrH').value); let bmr; if(g==='male') bmr=10*w+6.25*h-5*age+5; else bmr=10*w+6.25*h-5*age-161; document.getElementById('bmrVal').textContent=Math.round(bmr)+' kcal'; document.getElementById('bmrRes').classList.remove('hidden');}</script><style>
+</main><footer class="bg-gray-900 text-gray-300 mt-20"><div class="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-4 gap-8 text-sm"><div><div class="font-bold text-white">IsraelPost Tools</div><p class="mt-2 text-gray-400">Free browser-based tools. All tools run locally — no file upload. Contact: admin@israelpost.cc</p></div><div><div class="font-bold text-white">Tools</div><ul class="mt-3 space-y-1"><li><a href="/tools/json-formatter.html" class="hover:text-white py-2 inline-block">JSON Formatter</a></li><li><a href="/tools/bmi-calculator.html" class="hover:text-white py-2 inline-block">BMI Calculator</a></li><li><a href="/tools/" class="hover:text-white py-2 inline-block">All 25 Tools</a></li></ul></div><div><div class="font-bold text-white">Legal</div><ul class="mt-3 space-y-1"><li><a href="/privacy.html" class="hover:text-white py-2 inline-block">Privacy</a></li><li><a href="/terms.html" class="hover:text-white py-2 inline-block">Terms</a></li><li><a href="/disclaimer.html" class="hover:text-white py-2 inline-block">Disclaimer</a></li><li><a href="/blog/" class="hover:text-white py-2 inline-block">Blog</a></li></ul></div><div><div class="font-bold text-white">About</div><p class="mt-3 text-gray-400">Managed by Ahmed Bream. Last updated: 2026-08-19.</p></div></div><div class="border-t border-gray-800 py-4 text-center text-xs text-gray-500">© 2026 IsraelPost — israelpost.cc</div></footer><script>function calcBMR(){const g=document.getElementById('gender').value, age=parseFloat(document.getElementById('age').value), w=parseFloat(document.getElementById('bmrW').value), h=parseFloat(document.getElementById('bmrH').value); let bmr; if(g==='male') bmr=10*w+6.25*h-5*age+5; else bmr=10*w+6.25*h-5*age-161; document.getElementById('bmrVal').textContent=Math.round(bmr)+' kcal'; document.getElementById('bmrRes').classList.remove('hidden');}</script><style>
 .cookie-banner{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background-color:#ffffff;color:#333333;padding:20px;box-shadow:0 4px 15px rgba(0,0,0,0.2);border-radius:8px;z-index:99999;width:90%;max-width:500px;font-family:sans-serif;display:none}
 .cookie-banner h3{margin-top:0;color:#1a73e8}
 .cookie-buttons{display:flex;gap:10px;margin-top:15px;justify-content:flex-end;flex-wrap:wrap}
@@ -70,4 +105,13 @@
   };
 })();
 </script>
-</body></html>
+<script>
+(function(){
+var mb=document.getElementById('menuBtn'),mm=document.getElementById('mobileMenu');
+if(mb&&mm){mb.addEventListener('click',function(){var o=!mm.classList.toggle('hidden');mb.setAttribute('aria-expanded',o?'true':'false');});}
+var db=document.getElementById('darkToggle'),s=document.getElementById('iconSun'),m=document.getElementById('iconMoon');
+function syn(){if(!s||!m)return;var d=document.documentElement.classList.contains('dark');s.classList.toggle('hidden',d);m.classList.toggle('hidden',!d);}
+syn();
+if(db){db.addEventListener('click',function(){document.documentElement.classList.toggle('dark');try{localStorage.setItem('theme',document.documentElement.classList.contains('dark')?'dark':'light');}catch(e){}syn();});}
+})();
+</script></body></html>
