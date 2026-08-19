@@ -1,0 +1,48 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About IsraelPost — How Tools Are Built, Tested and Maintained</title>
+<meta name="description" content="About israelpost.cc: purpose, who runs it, how tools are built and tested, update policy, bug fixes.">
+<link rel="canonical" href="https://israelpost.cc/about.html">
+<meta property="og:title" content="About IsraelPost">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7123962689094781" crossorigin="anonymous"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+</head><body class="bg-gray-50 text-gray-800"><header class="bg-white border-b sticky top-0 z-30"><div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"><a href="/" class="font-bold text-xl text-indigo-600">IsraelPost</a><nav class="flex gap-4 text-sm"><a href="/" class="hover:text-indigo-600">Home</a><a href="/tools/" class="hover:text-indigo-600">Tools</a><a href="/about.html" class="hover:text-indigo-600">About</a><a href="/author/" class="hover:text-indigo-600">Author</a><a href="/contact.html" class="hover:text-indigo-600">Contact</a><a href="/privacy.html" class="hover:text-indigo-600">Privacy</a><a href="/terms.html" class="hover:text-indigo-600">Terms</a><a href="/disclaimer.html" class="hover:text-indigo-600">Disclaimer</a></nav></div></header>
+<main class="max-w-4xl mx-auto px-6 py-10">
+<article class="bg-white border rounded-xl p-8 text-sm leading-7">
+<h1 class="text-3xl font-bold">About IsraelPost Tools</h1>
+<p class="mt-4"><strong>Site name:</strong> IsraelPost Tools — https://israelpost.cc — a collection of free browser-based utilities for developers, writers, students and small businesses.</p>
+<p class="mt-3"><strong>Domain:</strong> israelpost.cc — this is the only official domain. Any reference to toolveralab.com is removed because that domain is not owned by us.</p>
+<p class="mt-3"><strong>Who runs it:</strong> Managed by Ahmed Bream, web developer based in Khan Yunis, Gaza Strip. Contact: admin@israelpost.cc. See <a href="/author/" class="text-indigo-600 underline">Author page</a> for verification. We do not claim fake team members, awards, certifications or company size.</p>
+
+<h2 class="text-xl font-bold mt-8">Why was IsraelPost created?</h2>
+<p class="mt-3">Most online converters require uploading CSV with customer emails, JSON with API keys, or images with private data. For a small business handling customer data, uploading to an unknown server is risky and may violate privacy expectations. IsraelPost was started in 2024 to build local-first alternatives.</p>
+<p class="mt-3">Every tool is designed to work 100% in the browser tab using vanilla JavaScript, Web Crypto API (SubtleCrypto for hashing, crypto.randomUUID for UUIDs, crypto.getRandomValues for passwords), FileReader API for file checksums, and Canvas for QR codes. You can verify by opening DevTools → Network → no file content is POSTed when you use any tool. You can even disconnect internet after page loads and tools still work.</p>
+
+<h2 class="text-xl font-bold mt-8">How are tools developed?</h2>
+<ol class="list-decimal pl-5 mt-3 space-y-2">
+<li><strong>Problem selection:</strong> We pick a real problem reported by users or observed in forums, e.g., "I need to convert 5000-line CSV to SQL without uploading customer emails" or "I need to format minified JSON from an API to debug".</li>
+<li><strong>Prototype:</strong> Build minimal prototype with vanilla JS, no heavy libraries. For hashing we use SubtleCrypto, for QR we use qrcodejs CDN, for color we use native color input.</li>
+<li><strong>UI clarity:</strong> User must instantly know: what tool does, where to paste, where to click, where result appears, how to copy. We place tool at top, explanation below, so content does not bury tool.</li>
+<li><strong>Testing:</strong> Checklist per tool: valid input, empty input, malformed input, very large input (20k+ lines or 50k chars), special characters, Arabic text, emoji, mobile viewport (no horizontal overflow), copy button works, reset works, error message clear and not technical jargon.</li>
+<li><strong>Documentation:</strong> For each tool we write specific content: what it is, how to use step by step, real example Input→Processing→Output, how it works (formula, algorithm, browser API), when to use, when NOT to use (especially for financial/health), common errors, FAQ specific to that tool, internal links to related tools, sources where applicable (NHS, CDC, Investopedia).</li>
+</ol>
+
+<h2 class="text-xl font-bold mt-8">Testing methodology for calculators</h2>
+<p class="mt-3">BMI: Formula BMI = weight kg / (height m)², categories per CDC and NHS (Underweight &lt;18.5, Normal 18.5–24.9, Overweight 25–29.9, Obese ≥30). Tested with 70kg/175cm → 22.9 Normal.</p>
+<p class="mt-2">BMR: Mifflin-St Jeor: Men 10*W +6.25*H -5*A +5, Women 10*W +6.25*H -5*A -161, source American Journal of Clinical Nutrition 1990. Tested male 70kg/175cm/25y → 1673 kcal.</p>
+<p class="mt-2">Loan EMI: EMI = P*R*(1+R)^N / ((1+R)^N -1) where R = annual/12/100, N = years*12, source Investopedia amortization. Tested P=10000, 8%, 5y → $202.76.</p>
+<p class="mt-2">All calculators include disclaimer that results are educational/estimates, not medical or financial advice.</p>
+
+<h2 class="text-xl font-bold mt-8">Update policy and bug fixes</h2>
+<p class="mt-3">Last site-wide review: 2025-05-13. When a formula, browser API, or explanation changes, we update the page and update Last updated date inside that page. Bug reports via <a href="/contact.html" class="underline text-indigo-600">Contact form</a> or direct email admin@israelpost.cc are fixed within 48 hours. We keep changelog mentally via file modification dates.</p>
+
+<h2 class="text-xl font-bold mt-8">Content authenticity</h2>
+<p class="mt-3">All text is written originally for each tool, not copied, not translated verbatim from other sites, not template with only name changed. Each page has unique introduction, examples, use cases, errors and FAQ specific to that tool. We avoid generic filler like "In today's world..." and avoid marketing claims like "100% guaranteed AdSense approval" because approval is Google's decision, not ours.</p>
+
+<h2 class="text-xl font-bold mt-8">Contact and corrections</h2>
+<p class="mt-3">If you find error in formula, example or explanation, email admin@israelpost.cc with tool URL and details. We verify and correct.</p>
+
+<p class="mt-8 text-xs text-gray-500">Last updated: 2025-05-13 — Contact: admin@israelpost.cc</p>
+</article>
+</main>
+<footer class="bg-gray-900 text-gray-300 mt-20"><div class="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-4 gap-8 text-sm"><div><h4 class="font-bold text-white">IsraelPost Tools</h4><p class="mt-2 text-gray-400">Free browser-based tools. All tools run locally — no file upload. Contact: admin@israelpost.cc</p></div><div><h4 class="font-bold text-white">Tools</h4><ul class="mt-3 space-y-1"><li><a href="/tools/json-formatter.html" class="hover:text-white">JSON Formatter</a></li><li><a href="/tools/csv-to-sql.html" class="hover:text-white">CSV to SQL</a></li><li><a href="/tools/word-counter.html" class="hover:text-white">Word Counter</a></li><li><a href="/tools/bmi-calculator.html" class="hover:text-white">BMI Calculator</a></li><li><a href="/tools/" class="hover:text-white">All 25 Tools</a></li></ul></div><div><h4 class="font-bold text-white">Legal</h4><ul class="mt-3 space-y-1"><li><a href="/privacy.html" class="hover:text-white">Privacy Policy</a></li><li><a href="/terms.html" class="hover:text-white">Terms</a></li><li><a href="/disclaimer.html" class="hover:text-white">Disclaimer</a></li></ul></div><div><h4 class="font-bold text-white">About</h4><p class="mt-3 text-gray-400">Managed by Ahmed Bream. Last updated: 2025-05-13. Tools tested manually on desktop and mobile.</p><a href="/contact.html" class="mt-2 inline-block text-indigo-400">Contact →</a></div></div><div class="border-t border-gray-800 py-4 text-center text-xs text-gray-500">© 2025 IsraelPost — israelpost.cc — All tools client-side.</div></footer>
+</body></html>

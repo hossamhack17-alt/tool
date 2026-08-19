@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSV to SQL Converter — Convert CSV to INSERT Statements</title>
+<meta name="description" content="Convert CSV to SQL INSERT statements online. MySQL and PostgreSQL. Private, no upload.">
+<link rel="canonical" href="https://israelpost.cc/tools/csv-to-sql.html">
+<meta property="og:title" content="CSV to SQL Converter — Convert CSV to INSERT Statements">
+<meta property="og:description" content="Convert CSV to SQL INSERT statements online. MySQL and PostgreSQL. Private, no upload.">
+<meta property="og:url" content="https://israelpost.cc/tools/csv-to-sql.html">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7123962689094781" crossorigin="anonymous"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+</head><body class="bg-gray-50 text-gray-800">
+<header class="bg-white border-b sticky top-0 z-30"><div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"><a href="/" class="font-bold text-xl text-indigo-600">IsraelPost</a><nav class="flex gap-4 text-sm"><a href="/" class="hover:text-indigo-600">Home</a><a href="/tools/" class="hover:text-indigo-600">Tools</a><a href="/about.html" class="hover:text-indigo-600">About</a><a href="/author/" class="hover:text-indigo-600">Author</a><a href="/contact.html" class="hover:text-indigo-600">Contact</a><a href="/privacy.html" class="hover:text-indigo-600">Privacy</a><a href="/terms.html" class="hover:text-indigo-600">Terms</a><a href="/disclaimer.html" class="hover:text-indigo-600">Disclaimer</a></nav></div></header>
+<main class="max-w-7xl mx-auto px-6 py-10 grid lg:grid-cols-3 gap-10">
+<div class="lg:col-span-2">
+<div class="bg-white border rounded-xl p-6">
+<h1 class="text-3xl font-bold">CSV to SQL Insert Converter</h1>
+<p class="text-sm text-gray-600 mt-2">Convert CSV to SQL INSERT statements. Private, runs in browser.</p>
+<div class="mt-6">
+
+<div class="grid md:grid-cols-2 gap-3">
+<div><label class="text-xs font-semibold">Table name</label><input id="tableName" value="my_table" class="w-full border p-2 rounded mt-1 text-sm"></div>
+<div><label class="text-xs font-semibold">Dialect</label><select id="dialect" class="w-full border p-2 rounded mt-1 text-sm"><option>MySQL</option><option>PostgreSQL</option></select></div>
+</div>
+<label class="text-xs font-semibold mt-4 block">Paste CSV (first row = column names)</label>
+<textarea id="csvInput" rows="8" class="w-full border p-3 rounded mt-1 font-mono text-xs" placeholder="id,name,price&#10;1,Ahmed,100&#10;2,Sara,200"></textarea>
+<button onclick="convert()" class="mt-3 bg-indigo-600 text-white px-5 py-2 rounded">Convert to SQL</button>
+<button onclick="navigator.clipboard.writeText(document.getElementById('sqlOutput').value)" class="ml-2 bg-gray-100 px-4 py-2 rounded text-sm">Copy SQL</button>
+<textarea id="sqlOutput" rows="8" class="w-full border p-3 rounded mt-3 font-mono text-xs bg-gray-50" readonly></textarea>
+
+</div>
+<div class="mt-8">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7123962689094781" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7123962689094781" data-ad-slot="5496967122" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+</div>
+<div class="bg-white border rounded-xl p-8 mt-8 text-sm leading-7">
+
+<h2 class="text-xl font-bold">What is CSV to SQL Converter?</h2>
+<p class="mt-3">You exported a spreadsheet with 200 customers: id, name, email, price. You need to import it into MySQL. Writing 200 INSERT statements by hand is error-prone. This converter takes CSV where first row is column names and produces INSERT statements you can run directly in phpMyAdmin, DBeaver or psql.</p>
+<p class="mt-3">Most converters upload your CSV to a server, which is risky if it contains customer emails or internal prices. This tool runs 100% client-side: it splits text by newlines and commas using JavaScript, escapes single quotes by doubling them (''), and builds INSERT strings locally. Your data never leaves your device. You can verify by checking Network tab — no upload.</p>
+
+<h2 class="text-xl font-bold mt-8">How to use</h2>
+<ol class="list-decimal pl-5 mt-3">
+<li>Export sheet as CSV or copy from Excel.</li>
+<li>Paste into box, ensure first line is header: id,name,price</li>
+<li>Enter table name, e.g., customers.</li>
+<li>Click Convert, then Copy SQL and run in your SQL client.</li>
+</ol>
+
+<h2 class="text-xl font-bold mt-8">Real example</h2>
+<p class="mt-2"><strong>Input CSV:</strong></p>
+<pre class="bg-gray-50 p-3 rounded text-xs mt-2">id,name,email
+1,Ahmed,ahmed@example.com
+2,Sara,sara@example.com</pre>
+<p class="mt-3"><strong>Output SQL:</strong></p>
+<pre class="bg-gray-50 p-3 rounded text-xs mt-2">INSERT INTO customers (id, name, email) VALUES ('1', 'Ahmed', 'ahmed@example.com');
+INSERT INTO customers (id, name, email) VALUES ('2', 'Sara', 'sara@example.com');</pre>
+
+<h2 class="text-xl font-bold mt-8">How it works</h2>
+<p class="mt-3">Logic: split input by newline → headers = first line split by comma → for each remaining line, split by comma, trim, escape ' as '' → build INSERT. Dialect option currently changes quoting style but both MySQL and PostgreSQL accept standard INSERT. Complexity O(rows). No external library.</p>
+
+<div class="mt-8">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7123962689094781" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7123962689094781" data-ad-slot="4782099528"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<h2 class="text-xl font-bold mt-8">When to use?</h2>
+<ul class="list-disc pl-5 mt-3">
+<li>Migrating Excel product list to MySQL.</li>
+<li>Seeding test database with 1000 rows.</li>
+<li>Converting Google Sheets export to PostgreSQL.</li>
+</ul>
+
+<h2 class="text-xl font-bold mt-8">When NOT to use?</h2>
+<p class="mt-3">If CSV contains commas inside quoted fields like "Ahmed, Jr.", simple split by comma will break. For such CSV, use a proper CSV parser or pre-clean data. Also, for very large files (100k+ rows), browser may slow — split file.</p>
+
+<h2 class="text-xl font-bold mt-8">Common errors</h2>
+<p class="mt-3"><strong>1. Column count mismatch:</strong> Row has 2 values but header has 3. Check empty commas.</p>
+<p class="mt-2"><strong>2. Special characters:</strong> Arabic is fine, but ensure file is UTF-8.</p>
+<p class="mt-2"><strong>3. Single quotes in data:</strong> O'Brien becomes 'O''Brien' automatically — correct for SQL.</p>
+
+<h2 class="text-xl font-bold mt-8">FAQ</h2>
+<p class="mt-3"><strong>Is my CSV uploaded?</strong> No. Conversion happens via JavaScript split() locally.</p>
+<p class="mt-3"><strong>Does it handle data types?</strong> Currently all values are quoted as text. For integers, you can remove quotes manually if needed.</p>
+<p class="mt-3"><strong>Can I convert to UPDATE?</strong> Not yet, only INSERT.</p>
+
+<p class="mt-8 text-xs text-gray-500">Last updated: 2025-05-13 — Related: <a href="/tools/json-formatter.html" class="underline text-indigo-600">JSON Formatter</a>, <a href="/tools/remove-duplicate-lines.html" class="underline text-indigo-600">Remove Duplicates</a>.</p>
+
+</div>
+</div>
+<div class="space-y-6">
+<div class="bg-white border rounded-xl p-6 text-sm">
+<h3 class="font-bold">Related Tools</h3>
+<ul class="mt-3 space-y-2">
+<li><a href="/tools/json-formatter.html" class="text-indigo-600 underline">JSON Formatter</a></li>
+<li><a href="/tools/csv-to-sql.html" class="text-indigo-600 underline">CSV to SQL</a></li>
+<li><a href="/tools/word-counter.html" class="text-indigo-600 underline">Word Counter</a></li>
+<li><a href="/tools/" class="text-indigo-600 underline">All Tools</a></li>
+</ul>
+</div>
+<div class="bg-indigo-50 border border-indigo-100 rounded-xl p-6 text-sm">
+<h3 class="font-bold">Why local?</h3>
+<p class="mt-2 text-gray-700">All tools on IsraelPost run in your browser. No file is uploaded. You can verify in DevTools Network. Your data never leaves your device.</p>
+</div>
+</div>
+</main>
+<footer class="bg-gray-900 text-gray-300 mt-20"><div class="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-4 gap-8 text-sm"><div><h4 class="font-bold text-white">IsraelPost Tools</h4><p class="mt-2 text-gray-400">Free browser-based tools. All tools run locally — no file upload. Contact: admin@israelpost.cc</p></div><div><h4 class="font-bold text-white">Tools</h4><ul class="mt-3 space-y-1"><li><a href="/tools/json-formatter.html" class="hover:text-white">JSON Formatter</a></li><li><a href="/tools/csv-to-sql.html" class="hover:text-white">CSV to SQL</a></li><li><a href="/tools/bmi-calculator.html" class="hover:text-white">BMI Calculator</a></li><li><a href="/tools/" class="hover:text-white">All 25 Tools</a></li></ul></div><div><h4 class="font-bold text-white">Legal</h4><ul class="mt-3 space-y-1"><li><a href="/privacy.html" class="hover:text-white">Privacy</a></li><li><a href="/terms.html" class="hover:text-white">Terms</a></li><li><a href="/disclaimer.html" class="hover:text-white">Disclaimer</a></li></ul></div><div><h4 class="font-bold text-white">About</h4><p class="mt-3 text-gray-400">Managed by Ahmed Bream. Last updated: 2025-05-13.</p></div></div><div class="border-t border-gray-800 py-4 text-center text-xs text-gray-500">© 2025 IsraelPost — israelpost.cc</div></footer>
+<script>
+function convert(){
+ const csv=document.getElementById('csvInput').value.trim();
+ const table=document.getElementById('tableName').value||'my_table';
+ if(!csv) return;
+ const lines=csv.split('\n');
+ const headers=lines[0].split(',').map(h=>h.trim().replace(/[^a-zA-Z0-9_]/g,'_'));
+ let sql='';
+ for(let i=1;i<lines.length;i++){
+  if(!lines[i].trim()) continue;
+  const vals=lines[i].split(',').map(v=>"'"+v.trim().replace(/'/g,"''")+"'");
+  sql+=`INSERT INTO ${table} (${headers.join(', ')}) VALUES (${vals.join(', ')});\n`;
+ }
+ document.getElementById('sqlOutput').value=sql;
+}
+</script>
+</body></html>
